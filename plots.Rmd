@@ -177,9 +177,9 @@ ggplot(data.frame(x=c(-2.5,2.5)), aes(x))+
   coord_cartesian(ylim = c(-0.5,1.5),xlim=c(-2,2))+
   geom_hline(yintercept = 0, aes(color = 'black'))
 
-kable(for (x in seq(-3,3,by = 0.5)){
+for (x in seq(-3,3,by = 0.5)){
   print(sqrt(abs(1-x^2)))
-})
+}
 
 ```
 
