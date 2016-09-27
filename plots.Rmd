@@ -169,3 +169,4 @@ ggplot(data.frame(x=c(0,6)), aes(x))+
 
 ## Changelog
 1. Document created
+2. Uploaded to GitHub
