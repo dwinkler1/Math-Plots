@@ -161,12 +161,38 @@ ggplot(data.frame(x=c(0,6)), aes(x))+
   coord_cartesian(ylim=c(-9,9), xlim=c(0,5))
 ```
 
+## Plot of $\sqrt{|1-x^2|}$ 
+
+```{r, echo = FALSE, warning = FALSE}
+
+eq <- function(x)(sqrt(abs(1-x^2)))
+eq1<- function(x)ifelse(abs(x)-1>=0,(abs(x)-1), NA)
+eq2<- function(x)(sqrt(abs(x)-1))
+ggplot(data.frame(x=c(-2.5,2.5)), aes(x))+
+  stat_function(fun=eq, geom='line', aes(color= 'sqrt(|1-x^2|)'))+
+  stat_function(fun=eq1, geom = 'line', aes(color = '|x|-1'))+
+  stat_function(fun=function(x)(1-x^2), geom= 'line', aes(color = '1-x^2'))+ 
+  stat_function(fun=eq2, geom = 'line', aes(color='sqrt(|x|-1)'))+
+  ylim(c(-10,10))+
+  coord_cartesian(ylim = c(-0.5,1.5),xlim=c(-2,2))+
+  geom_hline(yintercept = 0, aes(color = 'black'))
+
+kable(for (x in seq(-3,3,by = 0.5)){
+  print(sqrt(abs(1-x^2)))
+})
+
+```
+
+
 ## Proposed to add
 
 1. $sin(x)$
     + $\frac{1}{sin(x)}$
     + $sin(x^2)$
 2. $cos(x)$
+
 ## Changelog
+
 1. Document created
 2. Uploaded to GitHub
+3. Added plot of  $\sqrt{|1-x^2|}$
