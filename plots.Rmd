@@ -177,10 +177,15 @@ ggplot(data.frame(x=c(-2.5,2.5)), aes(x))+
   coord_cartesian(ylim = c(-0.5,1.5),xlim=c(-2,2))+
   geom_hline(yintercept = 0, aes(color = 'black'))
 
+table.sqrt <- vector()
 for (x in seq(-3,3,by = 0.5)){
-  print(sqrt(abs(1-x^2)))
+  y <- (sqrt(abs(1-x^2)))
+  x <- x
+  xy <- cbind(x,y)
+  table.sqrt <- rbind(table.sqrt, xy) 
 }
-
+colnames(table.sqrt)<-c('x','$\\sqrt{|1-x^2|}$')
+kable(table.sqrt)
 ```
 
 
@@ -194,5 +199,5 @@ for (x in seq(-3,3,by = 0.5)){
 ## Changelog
 
 1. Document created
-2. Uploaded to GitHub
+2. Uploaded to [GitHub](https://github.com/danielw2904/Math-Plots)
 3. Added plot of  $\sqrt{|1-x^2|}$
