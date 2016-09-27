@@ -166,7 +166,7 @@ ggplot(data.frame(x=c(0,6)), aes(x))+
 1. $sin(x)$
     + $\frac{1}{sin(x)}$
     + $sin(x^2)$
-
+2. $cos(x)$
 ## Changelog
 1. Document created
 2. Uploaded to GitHub
