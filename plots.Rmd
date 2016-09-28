@@ -109,7 +109,13 @@ kable(table_all, digits = 5, caption = '$x^n$')
 ## Plot of $\frac{1}{x^n}$ for $n=[1,4]$
 
 ``` {r, echo = F, warning = F}
-
+ggplot(data.frame(x = c(-5,5)), aes(x))+
+  stat_function(fun = function(x)1/x, aes(color = '1/x'))+
+  stat_function(fun = function(x)1/x^2, aes(color = '1/x^2'))+
+  stat_function(fun = function(x)1/x^3, aes(color = '1/x^3'))+
+  stat_function(fun = function(x)1/x^4, aes(color = '1/x^4'))+
+  ylim(-10,10)+
+  coord_cartesian(ylim=c(-4,4), xlim = c(-3,3))
 
 ```
 
@@ -208,3 +214,4 @@ kable(table.sqrt)
 1. Document created
 2. Uploaded to [GitHub](https://github.com/danielw2904/Math-Plots)
 3. Added plot of  $\sqrt{|1-x^2|}$
+4. Plot of $\frac{1}{x^n}$ for $n=[1,4]$
