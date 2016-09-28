@@ -106,6 +106,13 @@ table_all <- merge(table_even, table_odd)
 kable(table_all, digits = 5, caption = '$x^n$')
 ```
 
+## Plot of $\frac{1}{x^n}$ for $n=[1,4]$
+
+``` {r, echo = F, warning = F}
+
+
+```
+
 ## Plot of $\frac{x}{x^2-n}$ for $n=[1,3]$
 ```{r, echo = FALSE}
 eq <-function(x) ifelse(x == 1 | x == -1,NA, (x/((x^2)-1)))
