@@ -208,6 +208,7 @@ kable(table.sqrt)
     + $\frac{1}{sin(x)}$
     + $sin(x^2)$
 2. $cos(x)$
+3. List of most important definitions and formulas
 
 ## Changelog
 
